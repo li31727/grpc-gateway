@@ -402,10 +402,32 @@
             "collectionFormat": "multi"
           },
           {
+            "name": "oneofEmpty",
+            "in": "query",
+            "required": false,
+            "type": "object"
+          },
+          {
             "name": "oneofString",
             "in": "query",
             "required": false,
             "type": "string"
+          },
+          {
+            "name": "mapValue",
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "mappedStringValue",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "mappedNestedValue",
+            "in": "query",
+            "required": false
           },
           {
             "name": "nonConventionalNameValue",
@@ -820,10 +842,32 @@
             "collectionFormat": "multi"
           },
           {
+            "name": "oneofEmpty",
+            "in": "query",
+            "required": false,
+            "type": "object"
+          },
+          {
             "name": "oneofString",
             "in": "query",
             "required": false,
             "type": "string"
+          },
+          {
+            "name": "mapValue",
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "mappedStringValue",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "mappedNestedValue",
+            "in": "query",
+            "required": false
           },
           {
             "name": "nonConventionalNameValue",
@@ -1225,10 +1269,32 @@
             "collectionFormat": "multi"
           },
           {
+            "name": "oneofEmpty",
+            "in": "query",
+            "required": false,
+            "type": "object"
+          },
+          {
             "name": "oneofString",
             "in": "query",
             "required": false,
             "type": "string"
+          },
+          {
+            "name": "mapValue",
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "mappedStringValue",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "mappedNestedValue",
+            "in": "query",
+            "required": false
           },
           {
             "name": "nonConventionalNameValue",
@@ -1655,10 +1721,32 @@
             "collectionFormat": "multi"
           },
           {
+            "name": "oneofEmpty",
+            "in": "query",
+            "required": false,
+            "type": "object"
+          },
+          {
             "name": "oneofString",
             "in": "query",
             "required": false,
             "type": "string"
+          },
+          {
+            "name": "mapValue",
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "mappedStringValue",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "mappedNestedValue",
+            "in": "query",
+            "required": false
           },
           {
             "name": "nonConventionalNameValue",
@@ -2107,10 +2195,32 @@
             "collectionFormat": "multi"
           },
           {
+            "name": "oneofEmpty",
+            "in": "query",
+            "required": false,
+            "type": "object"
+          },
+          {
             "name": "oneofString",
             "in": "query",
             "required": false,
             "type": "string"
+          },
+          {
+            "name": "mapValue",
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "mappedStringValue",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "mappedNestedValue",
+            "in": "query",
+            "required": false
           },
           {
             "name": "timestampValue",
@@ -2802,10 +2912,32 @@
             "collectionFormat": "multi"
           },
           {
+            "name": "oneofEmpty",
+            "in": "query",
+            "required": false,
+            "type": "object"
+          },
+          {
             "name": "oneofString",
             "in": "query",
             "required": false,
             "type": "string"
+          },
+          {
+            "name": "mapValue",
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "mappedStringValue",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "mappedNestedValue",
+            "in": "query",
+            "required": false
           },
           {
             "name": "nonConventionalNameValue",
@@ -3207,10 +3339,32 @@
             "collectionFormat": "multi"
           },
           {
+            "name": "oneofEmpty",
+            "in": "query",
+            "required": false,
+            "type": "object"
+          },
+          {
             "name": "oneofString",
             "in": "query",
             "required": false,
             "type": "string"
+          },
+          {
+            "name": "mapValue",
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "mappedStringValue",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "mappedNestedValue",
+            "in": "query",
+            "required": false
           },
           {
             "name": "nonConventionalNameValue",
@@ -3636,10 +3790,32 @@
             "collectionFormat": "multi"
           },
           {
+            "name": "oneofEmpty",
+            "in": "query",
+            "required": false,
+            "type": "object"
+          },
+          {
             "name": "oneofString",
             "in": "query",
             "required": false,
             "type": "string"
+          },
+          {
+            "name": "mapValue",
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "mappedStringValue",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "mappedNestedValue",
+            "in": "query",
+            "required": false
           },
           {
             "name": "nonConventionalNameValue",
@@ -4065,10 +4241,32 @@
             "collectionFormat": "multi"
           },
           {
+            "name": "oneofEmpty",
+            "in": "query",
+            "required": false,
+            "type": "object"
+          },
+          {
             "name": "oneofString",
             "in": "query",
             "required": false,
             "type": "string"
+          },
+          {
+            "name": "mapValue",
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "mappedStringValue",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "mappedNestedValue",
+            "in": "query",
+            "required": false
           },
           {
             "name": "nonConventionalNameValue",
