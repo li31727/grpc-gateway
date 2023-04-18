@@ -254,7 +254,19 @@ func nestedQueryParams(message *descriptor.Message, field *descriptor.Field, pre
 	items := schema.Items
 	if schema.Type != "" || isEnum {
 		if schema.Type == "object" {
-			return nil, nil // TODO: currently, mapping object in query parameter is not supported
+			location := ""
+			k := &descriptorpb.FieldDescriptorProto{}
+			if ix := strings.LastIndex(field.Message.FQMN(), "."); ix > 0 {
+				location = field.Message.FQMN()[0:ix]
+			}
+			if m, err := reg.LookupMsg(location, field.GetTypeName()); err == nil {
+				if opt := m.GetOptions(); opt != nil && opt.MapEntry != nil && *opt.MapEntry {
+					k = m.GetField()[0]
+					field.Name = proto.String(fmt.Sprintf("%s[%s]", *field.Name, *k.Name))
+					schema.Type = schema.AdditionalProperties.schemaCore.Type
+				}
+			}
+			//return nil, nil // TODO: currently, mapping object in query parameter is not supported
 		}
 		if items != nil && (items.Type == "" || items.Type == "object") && !isEnum {
 			return nil, nil // TODO: currently, mapping object in query parameter is not supported
