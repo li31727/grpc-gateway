@@ -254,7 +254,25 @@ func nestedQueryParams(message *descriptor.Message, field *descriptor.Field, pre
 	items := schema.Items
 	if schema.Type != "" || isEnum {
 		if schema.Type == "object" {
-			return nil, nil // TODO: currently, mapping object in query parameter is not supported
+			location := ""
+			if ix := strings.LastIndex(field.Message.FQMN(), "."); ix > 0 {
+				location = field.Message.FQMN()[0:ix]
+			}
+			if m, err := reg.LookupMsg(location, field.GetTypeName()); err == nil {
+				if opt := m.GetOptions(); opt != nil && opt.MapEntry != nil && *opt.MapEntry {
+					k := m.GetField()[0]
+					if kType, err := getMapParamKey(k.GetType()); err == nil {
+						// this will generate a query name is  map_name[key_type]
+						fName := fmt.Sprintf("%s[%s]", *field.Name, kType)
+						field.Name = proto.String(fName)
+						schema.Type = schema.AdditionalProperties.schemaCore.Type
+						schema.Description = `This is a request variable of the map type. The query form is map_name[key]= value,e. g: If the map name is Age, the key type is string, and the value type is integer, the query parameter is expressed as Age["bob"]=18`
+					} else {
+						return nil, err
+					}
+
+				}
+			}
 		}
 		if items != nil && (items.Type == "" || items.Type == "object") && !isEnum {
 			return nil, nil // TODO: currently, mapping object in query parameter is not supported
@@ -362,6 +380,18 @@ func nestedQueryParams(message *descriptor.Message, field *descriptor.Field, pre
 		params = append(params, p...)
 	}
 	return params, nil
+}
+
+func getMapParamKey(t descriptorpb.FieldDescriptorProto_Type) (string, error) {
+
+	tType, f, ok := primitiveSchema(t)
+	if ok && (f != "byte" && f != "float" && f != "double") {
+		return tType, nil
+	} else {
+		es := fmt.Sprintf("not support type:%s", t)
+		return "", errors.New(es)
+	}
+
 }
 
 // findServicesMessagesAndEnumerations discovers all messages and enums defined in the RPC methods of the service.
